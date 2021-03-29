@@ -150,8 +150,8 @@
     background-color: #eaeaea;
 }
 
-.contact-name {
-    margin: 5px 0;
+.contact-name p {
+    padding-top: 10px;
 }
 
 /* Chats container */
@@ -160,6 +160,7 @@
     justify-content: space-between;
     flex-basis: 65%;
     background-image: url(../img/mine.jpg);
+    background-size: contain;
 }
 
 /* Upper user details */
@@ -168,9 +169,45 @@
     background-color: #eaeaea;
 }
 
+.chats .user-avatar p small {
+    color: #b1b1b1;
+}
+
 /* Main chat */
 .chat {
+    padding: 30px 50px;
+    overflow-y: auto;
+}
 
+.chat ul {
+    flex-direction: column;
+    list-style: none;
+}
+
+.message {
+    width: 45%;
+    position: relative;    
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px 20px 20px 20px;
+}
+
+.received {
+    background-color: #fff;
+}
+
+.sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.message-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px 5px 5px 5px;
+    font-size: 10px;
+    color: #b1b1b1;
 }
 
 /* Type message */

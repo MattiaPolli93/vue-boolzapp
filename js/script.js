@@ -4,7 +4,13 @@
 const app = new Vue(
   {
     el: "#app",
-    data: {        
+    data: {
+        // Main user
+        user: {
+            name: "Mattia",
+            avatar: "img/avatar_2.jpg"
+        },
+        // Contacts
         contacts: [
             {
                 name: "Deborah",

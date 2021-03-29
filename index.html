@@ -25,8 +25,8 @@
                 <div class="user flex">
                     <!-- Avatar -->
                     <div class="user-avatar flex">
-                        <img src="img/avatar_2.jpg" alt="User Avatar Image">
-                        <p>Mattia</p>
+                        <img v-bind:src="user.avatar" alt="User Avatar Image">
+                        <p>{{user.name}}</p>
                     </div>
 
                     <!-- Mini Navbar -->
@@ -79,8 +79,8 @@
                                 </div>
                                 
                                 <!-- Info on the right -->
-                                <p>{{contact.name}}</p>
                                 <div class="contact-name">
+                                    <p>{{contact.name}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -95,7 +95,10 @@
                     <!-- Avatar -->
                     <div class="user-avatar flex">
                         <img src="img/avatar_io.jpg" alt="User Avatar Image">
-                        <p>Deborah</p>
+                        <div class="last-access">
+                            <p>Deborah</p>
+                            <p><small>Last access: today at</small></p>
+                        </div>
                     </div>
 
                     <!-- Right Navbar -->
@@ -116,8 +119,26 @@
 
                 <!-- Main chat -->
                 <div class="chat">
-
+                    <ul class="flex">
+                        <!-- Sent message -->
+                        <li class="sent message flex">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sed, repudiandae iste ad magni magnam hic nam incidunt nulla, quidem quaerat nemo sint culpa. Obcaecati culpa error amet eveniet minus!</p>
+                            <p><small class="message-info">10/01/2021 16:15:22</small></p>                           
+                        </li>
+                        <!-- Sent message -->
+                        <li class="sent message flex">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sed, repudiandae iste ad magni magnam hic nam incidunt nulla, quidem quaerat nemo sint culpa. Obcaecati culpa error amet eveniet minus!
+                            </p>
+                            <p><small class="message-info">10/01/2021 16:15:22</small></p>            
+                        </li>
+                        <!-- Received message -->
+                        <li class="received message flex">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veritatis corrupti omnis eum sunt incidunt eligendi cumque perferendis commodi soluta labore dolores, excepturi id quisquam quos blanditiis odio dolore quia.</p>
+                            <p><small class="message-info">10/01/2021 16:15:22</small></p>
+                        </li>
+                    </ul>
                 </div>
+
 
                 <div class="type-message flex">
                     <div class="left-emoji flex">
