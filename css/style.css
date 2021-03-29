@@ -22,6 +22,12 @@
     color: #b1b1b1;
 }
 
+.sidebar .fas,
+.user img,
+.contact-item ul li {
+    cursor: pointer;
+}
+
 /* Main container */
 .main-container {
     flex-basis: 1200px;
@@ -62,7 +68,7 @@
 
 .nav ul li {
     list-style: none;
-    margin: 0 5px;
+    margin: 0 6px;
 }
 
 /* Notifications */
@@ -119,7 +125,34 @@
 
 /* Contacts */
 .contacts {
+    overflow-y: auto;
+}
 
+.contact-item {
+    background-color: #fff;
+}
+
+.contact-item img {
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px 15px;
+}
+
+.contact-item ul {    
+    width: 100%;
+    list-style: none;
+}
+
+.contact-item ul li {    
+    border-bottom: 1px solid #eaeaea;
+}
+
+.contact-item ul li:hover {
+    background-color: #eaeaea;
+}
+
+.contact-name {
+    margin: 5px 0;
 }
 
 /* Chats container */
