@@ -7,4 +7,77 @@
 
 .wrapper {
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#009688 15%, #dbdbd2 15% 100%);
+    padding: 25px 0;
+}
+
+.flex {
+    display: flex;
+}
+
+/* Main container */
+.main-container {
+    flex-basis: 1000px;
+    height: calc(100vh - 50px);
+    /* ! Remove */
+    background-color: #e03333;
+}
+
+/* Sidebar */
+.sidebar {
+    flex-direction: column;
+    flex-basis: 35%;
+    background-color: #eaeaea;
+}
+
+/* User */
+.user {
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid #eaeaea;
+}
+
+.user-avatar {
+    align-items: center;
+}
+
+.user-avatar img {
+    align-items: center;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.nav ul {
+    justify-content: center;
+    color: #b1b1b1;
+}
+
+.nav ul li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+/* Notifications */
+.notifications {
+
+}
+
+/* SearchBar */
+.searchbar {
+
+}
+
+/* Contacts */
+.contacts {
+
+}
+
+/* Chats container */
+.chats {
+    flex-direction: column;
+    flex-basis: 65%;
 }
