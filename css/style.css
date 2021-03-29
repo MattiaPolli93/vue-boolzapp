@@ -67,7 +67,6 @@
 
 /* Notifications */
 .notifications {
-    flex-basis: 100%;
     align-items: center;
     background-color: #8edafc;
 }
@@ -89,12 +88,33 @@
 }
 
 .right-not p {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 /* SearchBar */
 .searchbar {
+    background-color: #f3eeea;
+    width: 100%;
+    padding: 6px 8px;
+}
 
+.input-container {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.input-container .fa-search {
+    padding: 5px 10px;
+}
+
+.searchbar input {
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-left: 1px solid #b1b1b191;
 }
 
 /* Contacts */
