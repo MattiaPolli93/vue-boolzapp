@@ -18,9 +18,13 @@
     display: flex;
 }
 
+.dark-grey {
+    color: #b1b1b1;
+}
+
 /* Main container */
 .main-container {
-    flex-basis: 1000px;
+    flex-basis: 1200px;
     height: calc(100vh - 50px);
     /* ! Remove */
     background-color: #e03333;
@@ -53,7 +57,7 @@
 
 .nav ul {
     justify-content: center;
-    color: #b1b1b1;
+    padding-right: 10px;
 }
 
 .nav ul li {
@@ -63,7 +67,29 @@
 
 /* Notifications */
 .notifications {
+    flex-basis: 100%;
+    align-items: center;
+    background-color: #8edafc;
+}
 
+.left-not {
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.left-not .fa-bell-slash {
+    font-size: 20px;
+    color: #8edafc;
+}
+
+.right-not p {
+    margin-bottom: 5px;
 }
 
 /* SearchBar */
