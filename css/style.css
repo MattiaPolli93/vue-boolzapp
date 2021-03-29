@@ -114,16 +114,18 @@
 }
 
 .searchbar input {
-    padding: 10px;
+    padding: 10px 10px 10px 25px;
     width: 100%;
     background-color: #fff;
     border: none;
-    border-left: 1px solid #b1b1b191;
+    border-left: 1px solid #b1b1b1;
 }
 
 /* Contacts */
 .contacts {
+    height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .contact-item {
@@ -156,14 +158,40 @@
 /* Chats container */
 .chats {
     flex-direction: column;
+    justify-content: space-between;
     flex-basis: 65%;
     background-image: url(../img/mine.jpg);
 }
 
-.chats .user {
+/* Upper user details */
+.chats .user,
+.chats .type-message {
     background-color: #eaeaea;
 }
 
+/* Main chat */
 .chat {
-    
+
+}
+
+.type-message {
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    padding: 10px 0;
+}
+
+.left-emoji,
+.right-emoji {
+    flex-basis: 10%;
+    justify-content: center;
+    align-items: center;
+    color: #6b7376;
+    font-size: 20px;
+}
+
+.type-message input {
+    flex-basis: 80%;
+    height: 45px;
+    border: none;
 }
