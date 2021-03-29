@@ -22,7 +22,7 @@
     color: #b1b1b1;
 }
 
-.sidebar .fas,
+.wrapper .fas,
 .user img,
 .contact-item ul li {
     cursor: pointer;
@@ -32,8 +32,6 @@
 .main-container {
     flex-basis: 1200px;
     height: calc(100vh - 50px);
-    /* ! Remove */
-    background-color: #e03333;
 }
 
 /* Sidebar */
@@ -47,7 +45,7 @@
 .user {
     justify-content: space-between;
     align-items: center;
-    border-right: 1px solid #eaeaea;
+    border-right: 1px solid #b1b1b1;
 }
 
 .user-avatar {
@@ -58,7 +56,7 @@
     align-items: center;
     height: 50px;
     border-radius: 50%;
-    margin: 10px;
+    margin: 12px;
 }
 
 .nav ul {
@@ -68,7 +66,7 @@
 
 .nav ul li {
     list-style: none;
-    margin: 0 6px;
+    margin: 0 8px;
 }
 
 /* Notifications */
@@ -159,4 +157,13 @@
 .chats {
     flex-direction: column;
     flex-basis: 65%;
+    background-image: url(../img/mine.jpg);
+}
+
+.chats .user {
+    background-color: #eaeaea;
+}
+
+.chat {
+    
 }
