@@ -7,8 +7,8 @@ const app = new Vue(
     data: {
         // User info
         user: {
-            name: "Mattia",
-            avatar: "img/avatar_2.jpg",
+            name: "Mattia 😎",
+            avatar: "img/avatar_2.jpg"
         },
         // Contacts info
         contacts: [
@@ -19,7 +19,7 @@ const app = new Vue(
                 messages: [
                     {
                         date: "10/01/2020 15:30:55",
-                        message: "Did you take the dog out?",
+                        message: "Did you take the dog out? 🐕",
                         status: "sent"
                     },
                     {
@@ -29,10 +29,10 @@ const app = new Vue(
                     },
                     {
                         date: "10/01/2020 16:15:22",
-                        message: "All done!",
+                        message: "All done! 👌",
                         status: "received"
                     }
-                ],
+                ]
             },
             {
                 name: "Michael",
@@ -51,10 +51,15 @@ const app = new Vue(
                     },
                     {
                         date: "20/03/2020 16:35:00",
-                        message: "I'd like to but I must go to the grocery store",
+                        message: "I'd like to but I must go to the grocery store first",
                         status: "sent"
+                    },
+                    {
+                        date: "20/03/2020 16:30:55",
+                        message: "Ok",
+                        status: "received"
                     }
-                ],
+                ]
             },
             {
                 name: "Erik",
@@ -76,7 +81,7 @@ const app = new Vue(
                         message: "Ah sorry!",
                         status: "received"
                     }
-                ],
+                ]
             },
             {
                 name: "Gianna",
@@ -85,15 +90,15 @@ const app = new Vue(
                 messages: [
                     {
                         date: "10/01/2020 18:30:55",
-                        message: "Did you know that a new pizzeria just opened?",
+                        message: "Did you know that a new pizzeria just opened? 🍕",
                         status: "sent"
                     },
                     {
                         date: "10/01/2020 18:55:00",
-                        message: "Yes, but I'd rather go to the cinema",
+                        message: "Yes, but I'd rather go to the cinema 📽️",
                         status: "received"
                     }
-                ],
+                ]
             },
             {    
                 name: "Lawrence",
@@ -110,7 +115,7 @@ const app = new Vue(
                         message: "Sure thing!",
                         status: "received"
                     }
-                ],
+                ]
             },
             {    
                 name: "James",
@@ -129,10 +134,15 @@ const app = new Vue(
                     },
                     {
                         date: "10/01/2020 16:30:55",
-                        message: "I know... Something that is impossible to describe with words...",
+                        message: "I know... Something impossible to describe with words...",
                         status: "sent"
+                    },
+                    {
+                        date: "10/01/2020 15:50:00",
+                        message: "😓😓😓",
+                        status: "received"
                     }
-                ],
+                ]
             },
             {    
                 name: "Samuel",
@@ -146,15 +156,15 @@ const app = new Vue(
                     },
                     {
                         date: "10/01/2020 15:50:00",
-                        message: "Wait what happened?",
+                        message: "Wait what happened? 😧",
                         status: "received"
                     },
                     {
                         date: "10/01/2020 19:50:00",
-                        message: "Hello? U there???",
+                        message: "Hello? U there??? 🤷‍♂️",
                         status: "received"
                     }
-                ],
+                ]
             },
             {    
                 name: "Jack",
@@ -168,11 +178,11 @@ const app = new Vue(
                     },
                     {
                         date: "10/01/2020 15:50:00",
-                        message: "Whenever you need me, I'll be there for you dude!",
+                        message: "Whenever you need me, I'll be there for you dude! 💪",
                         status: "received"
                     }
-                ],
-            },
+                ]
+            }
         ],
         contactIndex: 0,
         messageText: ""
@@ -186,7 +196,8 @@ const app = new Vue(
                 status: "received"
             });
         },
-        // Sending chat-messages (Template HTML: Enter button (keyboard)) 
+
+        // Sending chat-messages 
         sendMessage() {
             if (this.messageText !== "") {
                 this.contacts[this.contactIndex].messages.push({
@@ -199,7 +210,7 @@ const app = new Vue(
                 this.messageText = "";
 
                 // Timing function for the auto-reply message
-                setTimeout(this.autoReply, 1500);
+                setTimeout(this.autoReply, 1000);
             }
         }
     }

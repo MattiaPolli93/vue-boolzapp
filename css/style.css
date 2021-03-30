@@ -38,7 +38,7 @@
 /* Sidebar */
 .sidebar {
     flex-direction: column;
-    flex-basis: 35%;
+    flex-basis: 30%;
     background-color: #eaeaea;
 }
 
@@ -125,7 +125,6 @@
 .contacts {
     height: 70vh;
     overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .contact-item {
@@ -151,17 +150,33 @@
     background-color: #d5f9ba;
 }
 
+.contact-name {
+    padding-top: 8px;
+    width: 260px;
+}
+
 .contact-name p {
-    padding-top: 10px;
+    padding-top: 5px;
+}
+
+.contact-name p:last-child {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.contact-name p:last-child .check {
+    color: #1ed2ff;
+    vertical-align: text-top;
 }
 
 /* Chats container */
 .chats {
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 65%;
-    background-image: url(../img/mine.jpg);
-    background-size: contain;
+    flex-basis: 70%;
 }
 
 /* Upper user details */
@@ -175,6 +190,9 @@
     height: 100%;
     padding: 30px 50px;
     overflow-y: auto;
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    background-position: center;
 }
 
 .chat ul {
