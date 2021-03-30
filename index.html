@@ -98,7 +98,7 @@
                         <img v-bind:src="contacts[contactIndex].avatar" v-bind:alt="contacts[contactIndex].name">
                         <div class="last-access">
                             <p>{{contacts[contactIndex].name}}</p>
-                            <p><small class="dark-grey"> Last access: today at <time>X</time> </time></small></p>
+                            <p><small class="dark-grey"> Last access: today at <time>{{contacts[contactIndex].messages[0].date}}</time> </time></small></p>
                         </div>
                     </div>
 

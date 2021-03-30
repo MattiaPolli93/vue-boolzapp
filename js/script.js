@@ -179,6 +179,13 @@ const app = new Vue(
         messageText: ""
     },
     methods: {
+        // Sending automatic reply message
+        autoReply() {
+            this.contacts[this.contactIndex].messages.push({
+                message: "Sorry can't talk right now, I'll text you later!",
+                status: "received"
+            });
+        },
         // Sending chat-messages (Template HTML: Enter button (keyboard)) 
         sendMessage() {
             if (this.messageText !== "") {
@@ -186,9 +193,12 @@ const app = new Vue(
                     message: this.messageText,
                     status: 'sent'
                 });
-
+                
                 // Clearing input field after sending message
                 this.messageText = "";
+
+                // Timing function for the auto-reply message
+                setTimeout(this.autoReply, 1500);
             }
         }
     }
