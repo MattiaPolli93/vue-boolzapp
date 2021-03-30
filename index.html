@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
-    <!-- Vue.js -->
+    <!-- Vue.js - Dev Version-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -98,7 +98,7 @@
                         <img v-bind:src="contacts[contactIndex].avatar" v-bind:alt="contacts[contactIndex].name">
                         <div class="last-access">
                             <p>{{contacts[contactIndex].name}}</p>
-                            <p><small class="dark-grey"> Last access: today at <time>{{contacts[contactIndex].messages[0].date}}</time> </time></small></p>
+                            <p><small class="dark-grey"> last seen <time>{{contacts[contactIndex].lastAccess}}</time> </time></small></p>
                         </div>
                     </div>
 
@@ -146,7 +146,9 @@
         </div>
     </div>
 
-    <!-- JS -->
+    <!-- Day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <!-- Main JS file -->
     <script src="js/script.js"></script>
 </body>
 </html>

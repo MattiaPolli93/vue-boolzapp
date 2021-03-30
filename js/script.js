@@ -9,14 +9,13 @@ const app = new Vue(
         user: {
             name: "Mattia",
             avatar: "img/avatar_2.jpg",
-            visible: true
         },
         // Contacts info
         contacts: [
             {
                 name: "Deborah",
                 avatar: "img/avatar_io.jpg",
-                visible: true,
+                lastAccess: "today at 16:15",
                 messages: [
                     {
                         date: "10/01/2020 15:30:55",
@@ -38,7 +37,7 @@ const app = new Vue(
             {
                 name: "Michael",
                 avatar: "img/avatar_1.jpg",
-                visible: true,
+                lastAccess: "today at 16:30",
                 messages: [
                     {
                         date: "20/03/2020 16:30:00",
@@ -60,7 +59,7 @@ const app = new Vue(
             {
                 name: "Erik",
                 avatar: "img/avatar_3.jpg",
-                visible: true,
+                lastAccess: "yesterday at 04:35",
                 messages: [
                     {
                         date: "28/03/2020 10:10:40",
@@ -82,7 +81,7 @@ const app = new Vue(
             {
                 name: "Gianna",
                 avatar: "img/avatar_6.jpg",
-                visible: true,
+                lastAccess: "today at 19:00",
                 messages: [
                     {
                         date: "10/01/2020 18:30:55",
@@ -99,7 +98,7 @@ const app = new Vue(
             {    
                 name: "Lawrence",
                 avatar: "img/avatar_5.jpg",
-                visible: true,
+                lastAccess: "today at 13:00",
                 messages: [
                     {
                         date: "10/01/2020 11:30:55",
@@ -116,7 +115,7 @@ const app = new Vue(
             {    
                 name: "James",
                 avatar: "img/avatar_7.jpg",
-                visible: true,
+                lastAccess: "today at 15:50",
                 messages: [
                     {
                         date: "10/01/2020 15:30:55",
@@ -138,7 +137,7 @@ const app = new Vue(
             {    
                 name: "Samuel",
                 avatar: "img/avatar_4.jpg",
-                visible: true,
+                lastAccess: "today at 19:50",
                 messages: [
                     {
                         date: "10/01/2020 15:30:55",
@@ -160,7 +159,7 @@ const app = new Vue(
             {    
                 name: "Jack",
                 avatar: "img/avatar_8.jpg",
-                visible: true,
+                lastAccess: "today at 16:00",
                 messages: [
                     {
                         date: "10/01/2020 15:30:55",
@@ -182,6 +181,7 @@ const app = new Vue(
         // Sending automatic reply message
         autoReply() {
             this.contacts[this.contactIndex].messages.push({
+                date: dayjs().format("DD/MM/YY HH:MM:ss"),
                 message: "Sorry can't talk right now, I'll text you later!",
                 status: "received"
             });
@@ -190,6 +190,7 @@ const app = new Vue(
         sendMessage() {
             if (this.messageText !== "") {
                 this.contacts[this.contactIndex].messages.push({
+                    date: dayjs().format("DD/MM/YY HH:MM:ss"),
                     message: this.messageText,
                     status: 'sent'
                 });
