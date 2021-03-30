@@ -73,7 +73,7 @@
                     <div class="contact-item flex">
                         <ul>
                             <li class="flex" v-for="(contact, index) in contacts" @click="contactIndex = index" :class="(contactIndex === index) ? 'selected' : ''">
-                                
+
                                 <!-- Photo on the left -->
                                 <div class="contact-photo" >
                                     <img v-bind:src="contact.avatar" v-bind:alt="contact.name">
@@ -136,7 +136,7 @@
                         <i class="far fa-smile">
                         </i>
                     </div>
-                    <input type="text" placeholder=" Write a message">
+                    <input type="text" placeholder=" Write a message" v-model="messageText" @keyup.13=sendMessage()>
                     <div class="right-emoji flex">
                         <i class="fas fa-microphone">
                         </i>
