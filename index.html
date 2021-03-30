@@ -25,7 +25,7 @@
                 <div class="user flex">
                     <!-- Avatar -->
                     <div class="user-avatar flex">
-                        <img v-bind:src="user.avatar" alt="User Avatar Image">
+                        <img v-bind:src="user.avatar" v-bind:alt="user.name">
                         <p>{{user.name}}</p>
                     </div>
 
@@ -55,7 +55,7 @@
                     <!-- Notification messages -->
                     <div class="right-not">
                         <p>Get new messages notifications</p>
-                        <a class="dark-grey" href="#">Turn on desktop notifications</a>
+                        <a class="dark-grey" href="https://web.whatsapp.com/" target="_blank">Turn on desktop notifications</a>
                     </div>
                 </div>
 
@@ -72,10 +72,11 @@
                     <!-- Contact (chat) -->
                     <div class="contact-item flex">
                         <ul>
-                            <li class="flex" v-for="(contact, index) in contacts">
+                            <li class="flex" v-for="(contact, index) in contacts" @click="contactIndex = index" :class="(contactIndex === index) ? 'selected' : ''">
+                                
                                 <!-- Photo on the left -->
                                 <div class="contact-photo" >
-                                    <img v-bind:src="contact.avatar" alt="Avatar Image">
+                                    <img v-bind:src="contact.avatar" v-bind:alt="contact.name">
                                 </div>
                                 
                                 <!-- Info on the right -->
@@ -84,7 +85,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>                                   
+                    </div>                           
                 </div>
             </div>
 
@@ -94,10 +95,10 @@
                 <div class="user flex">
                     <!-- Avatar -->
                     <div class="user-avatar flex">
-                        <img src="img/avatar_io.jpg" alt="User Avatar Image">
+                        <img v-bind:src="contacts[contactIndex].avatar" v-bind:alt="contacts[contactIndex].name">
                         <div class="last-access">
-                            <p>Deborah</p>
-                            <p><small>Last access: today at</small></p>
+                            <p>{{contacts[contactIndex].name}}</p>
+                            <p><small class="dark-grey"> Last access: today at <time>X</time> </time></small></p>
                         </div>
                     </div>
 
@@ -121,25 +122,15 @@
                 <div class="chat">
                     <ul class="flex">
                         <!-- Sent message -->
-                        <li class="sent message flex">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sed, repudiandae iste ad magni magnam hic nam incidunt nulla, quidem quaerat nemo sint culpa. Obcaecati culpa error amet eveniet minus!</p>
-                            <p><small class="message-info">10/01/2021 16:15:22</small></p>                           
-                        </li>
-                        <!-- Sent message -->
-                        <li class="sent message flex">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sed, repudiandae iste ad magni magnam hic nam incidunt nulla, quidem quaerat nemo sint culpa. Obcaecati culpa error amet eveniet minus!
-                            </p>
-                            <p><small class="message-info">10/01/2021 16:15:22</small></p>            
-                        </li>
-                        <!-- Received message -->
-                        <li class="received message flex">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veritatis corrupti omnis eum sunt incidunt eligendi cumque perferendis commodi soluta labore dolores, excepturi id quisquam quos blanditiis odio dolore quia.</p>
-                            <p><small class="message-info">10/01/2021 16:15:22</small></p>
+                        <li class="received message flex" v-for="(message, index) in contacts[contactIndex].messages" v-bind:class="{sent: message.status === 'sent'}">
+                            <p>{{message.message}}</p>
+                            <p class="message-info"><time>{{message.date}}</time></p>
+                            <i class="fas fa-chevron-down dark-grey"></i>                        
                         </li>
                     </ul>
                 </div>
 
-
+                <!-- Sending messages -->
                 <div class="type-message flex">
                     <div class="left-emoji flex">
                         <i class="far fa-smile">
