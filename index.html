@@ -138,11 +138,22 @@
                     <div class="left-emoji flex">
                         <i class="far fa-smile">
                         </i>
+                        <i class="fas fa-paperclip"></i>
                     </div>
-                    <input type="text" placeholder=" Write a message" v-model="messageText" @keyup.13=sendMessage()>
+                    <div class="input-box">
+                        <input type="text" placeholder="Write a message" v-model="messageText" @keyup.13=sendMessage()>
+                    </div>
                     <div class="right-emoji flex">
                         <i class="fas fa-microphone">
                         </i>
+                        <div class="buttons-box">
+                            <button @click="resetInput()">
+                                <i class="fas fa-backspace"></i>
+                            </button>
+                            <button @click="sendMessage()">
+                                <i class="far fa-paper-plane"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

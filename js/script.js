@@ -242,6 +242,11 @@ const app = new Vue(
                 // Timing function for the auto-reply message
                 setTimeout(this.autoReply, 1000);
             }
+        },
+
+        // Clearing the input field before sending
+        resetInput() {
+            this.messageText = "";
         }
     }
   }
