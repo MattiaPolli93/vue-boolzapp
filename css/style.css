@@ -186,6 +186,14 @@
     background-color: #eaeaea;
 }
 
+.chats .nav {
+    width: 10%;
+}
+
+.chats .nav ul {
+    justify-content: space-around;
+}
+
 /* Main chat */
 .chat {
     height: 100%;

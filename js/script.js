@@ -215,18 +215,18 @@ const app = new Vue(
             }
         ],
         contactIndex: 0,
-        messageText: ""
+        messageText: "",
+        filteredNames: ""
+    },
+    computed: {
+        // Filtering contacts names when typing input in the searchbar
+        filterNames() {
+            return this.contacts.filter((contact) => {
+                return contact.name.toUpperCase().match(this.filteredNames.toUpperCase());
+            });
+        }
     },
     methods: {
-        // Sending automatic reply message
-        autoReply() {
-            this.contacts[this.contactIndex].messages.push({
-                date: dayjs().format("DD/MM/YY HH:MM:ss"),
-                message: "Sorry can't talk right now, I'll text you later!",
-                status: "received"
-            });
-        },
-
         // Sending chat-messages 
         sendMessage() {
             if (this.messageText !== "") {
@@ -242,6 +242,15 @@ const app = new Vue(
                 // Timing function for the auto-reply message
                 setTimeout(this.autoReply, 1000);
             }
+        },
+        
+        // Sending automatic reply message
+        autoReply() {
+            this.contacts[this.contactIndex].messages.push({
+                date: dayjs().format("DD/MM/YY HH:MM:ss"),
+                message: "Sorry can't talk right now, I'll text you later!",
+                status: "received"
+            });
         },
 
         // Clearing the input field before sending

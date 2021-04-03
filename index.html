@@ -65,7 +65,7 @@
                 <div class="searchbar">
                     <div class="input-container flex">
                         <i class="fas fa-search dark-grey"></i>
-                        <input type="text" placeholder="Search or start a new chat">
+                        <input type="text" placeholder="Search or start a new chat" v-model="filteredNames">
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                     <!-- Contact (chat) -->
                     <div class="contact-item flex">
                         <ul>
-                            <li class="flex" v-for="(contact, index) in contacts" @click="contactIndex = index" :class="(contactIndex === index) ? 'selected' : ''">
+                            <li class="flex" v-for="(contact, index) in filterNames" @click="contactIndex = index" :class="(contactIndex === index) ? 'selected' : ''">
 
                                 <!-- Photo on the left -->
                                 <div class="contact-photo" >
@@ -110,9 +110,6 @@
                         <ul class="flex dark-grey">
                             <li>
                                 <i class="fas fa-search"></i>
-                            </li>
-                            <li>
-                                <i class="fas fa-paperclip"></i>
                             </li>
                             <li>
                                 <i class="fas fa-ellipsis-v"></i>
